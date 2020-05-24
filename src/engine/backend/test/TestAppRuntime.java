@@ -33,7 +33,7 @@ public class TestAppRuntime {
 		QueryExecutor executor = QueryExecutor.getRuntimeInstance(parentDataset);
 		
 		
-		
+		// Query 1
 		SystemEntity queryUser = b;
 		int numMatches = 2;
 		
@@ -51,9 +51,7 @@ public class TestAppRuntime {
 		System.out.println(numMatches + " matches for user " + queryUser.getName() + ":  " + result);
 		
 		
-		
-		
-		
+		// Query 2
 		queryUser = e;
 		numMatches = 2;
 		
