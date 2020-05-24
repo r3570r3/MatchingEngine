@@ -66,7 +66,7 @@ public class AgeDataset implements RuntimeDataset {
 			}
 			
 			// top n check
-			if (result.size() >= nResults) {
+			if (results.size() >= nResults) {
 				return result;
 			}
 		}

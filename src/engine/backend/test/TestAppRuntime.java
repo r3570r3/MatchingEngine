@@ -30,8 +30,8 @@ public class TestAppRuntime {
 		parentDataset.addRuntimeEntityToDataset(e);
 		
 		
-		
 		QueryExecutor executor = QueryExecutor.getRuntimeInstance(parentDataset);
+		
 		
 		
 		SystemEntity queryUser = b;
@@ -40,14 +40,35 @@ public class TestAppRuntime {
 		List<SystemEntity> matchedUsers = executor.queryMatchesFor(queryUser, numMatches);
 		List<String> result = new ArrayList<String>();
 		
-		int i = 1;
+		int i = numMatches;
 		for (SystemEntity user : matchedUsers)	{
 			result.add(user.getName());
-			if (i++ >= 2)	{
+			if (i <= 0)	{
 				break;
 			}
+			i--;
 		}
-		System.out.println(result);
+		System.out.println(numMatches + " matches for user " + queryUser.getName() + ":  " + result);
+		
+		
+		
+		
+		
+		queryUser = e;
+		numMatches = 2;
+		
+		matchedUsers = executor.queryMatchesFor(queryUser, numMatches);
+		result = new ArrayList<String>();
+		
+		i = numMatches;
+		for (SystemEntity user : matchedUsers)	{
+			result.add(user.getName());
+			if (i <= 0)	{
+				break;
+			}
+			i--;
+		}
+		System.out.println(numMatches + " matches for user " + queryUser.getName() + ":  " + result);
 	}
 
 }

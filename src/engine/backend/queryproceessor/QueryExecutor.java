@@ -22,20 +22,10 @@ public class QueryExecutor {
 	public List<SystemEntity> queryMatchesFor(SystemEntity user, int topN)	{
 				
 		List<SystemEntity> result = new ArrayList<>();
-		List<String> resultNames = new  ArrayList<>();
 		
 		// dataset not prepared
 		if (parentDataset == null) { return result; }
-
 		
-		// 1. Get gender of a, go to opposite gender
-		// 2. Get age n of user, search for (n +/- i) in ages for interests
-		// 3. Get Interest matches, and order them
-		
-		String gender = user.getGender();
-		
-		// problem statement says opposite match
-		// parentDataset is a gender dataset currently
 		// 1. filter by gender, get matched ages set
 		List<RuntimeDataset> matchedData = parentDataset.queryDataset(user, false, topN, new ArrayList<>(), result);
 		

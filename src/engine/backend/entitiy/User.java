@@ -1,5 +1,11 @@
 package engine.backend.entitiy;
 
+/**
+ * This class represents an user of the dating recommendation engine.
+ * 
+ * @author chinmoykanjilal
+ *
+ */
 public class User implements SystemEntity {
 	
 	private String name;
@@ -51,10 +57,3 @@ public class User implements SystemEntity {
 		return name + " # " + gender + " # " + age + " # " + interests;
 	}
 }
-
-//class InterestComparator implements Comparator<SystemEntity>	{
-//	public int compare(SystemEntity u1, SystemEntity u2) {
-//		
-//	}
-//}
-
